@@ -1,0 +1,267 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  /* background-image: url("https://media.tenor.com/Sd_ATxkChjAAAAAM/schizophrenia-old-man.gif"); */
+  /* background-size: cover; */
+  background-color: rgb(53, 101, 77);
+  
+  user-select: none; /* Prevent text selection */
+}
+
+
+.logo {
+  position: absolute;
+  top: 30vh;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 25%;
+}
+
+.logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#startButton {
+  padding: 10px 20px;
+}
+
+#cardContainer {
+  position: absolute;
+  left: 45%;
+  bottom: 10px;
+  width: 200vb;
+  z-index: 0; /* Ensure the container is positioned above other elements */
+}
+
+#dealerCards{
+  position: absolute;
+  left: 45%;
+  top: 10px;
+  width: 200vb;
+  z-index: 0; /* Ensure the container is positioned above other elements */
+}
+
+.slide-in {
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+#cardContainer img , #dealerCards img{
+  width: 10%;
+  margin-right: -8%; /* Add negative margin to create overlapping effect */
+}
+
+#hitButton ,#standButton{
+  font-size: 4vb;
+  background-color: rgb(63, 170, 28);
+  width: 20vb;
+  height: 10vb;
+  position: fixed;
+  bottom: 30%;
+  left: 30%;
+  transform: translateX(-50%);
+  border-radius: 20vb;
+  border: solid black .5vb;
+  box-shadow: 1vb 1vb 1vb  rgb(13, 67, 41);
+}
+
+#standButton {
+ left: 70%;
+}
+
+#refreshButton{
+  width:10%;
+  height: 10%;
+  position: fixed;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20vb;
+  border: solid black .5vb;
+  box-shadow: 1vb 1vb 1vb  rgb(13, 67, 41);
+  background-color: rgb(63, 170, 28);
+  font-size: 4vb;
+}
+
+#startButton{
+  width:70%;
+  height: 30%;
+  bottom: -50%;
+  position: absolute;
+  border-radius: 20vb;
+  border: solid black .5vb;
+  box-shadow: 1vb 1vb 1vb  rgb(13, 67, 41);
+  background-color: rgb(63, 170, 28);
+  font-size: 4vb;
+}
+
+#winnerText {
+  text-align: center;
+  font-size: 5vb;
+  width:20%;
+  height: 10%;
+  position: fixed;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-shadow:.3vb .3vb .3vb  rgb(13, 67, 41);;
+  white-space: nowrap;
+}
+
+#scoreCounter , #dealerScore{
+  text-align: center;
+  font-size: 8vb;
+  width:20%;
+  height: 10%;
+  position: fixed;
+  bottom: 10%;
+  left: 20%;
+  transform: translateX(-50%);
+  text-shadow:.3vb .3vb .3vb  rgb(13, 67, 41);;
+}
+
+#dealerScore{
+  bottom: 70%;
+}
+
+#dealerFace{
+  font-size: 50px;
+  position: absolute;
+  width: 30vb;
+  top: 5%;
+  right: 5%;
+  border-radius: 10vb;
+  border: solid black 1vb;
+  box-shadow: 1vb 1vb 1vb  rgb(13, 67, 41);
+}
+
+#dealerText{
+  position:absolute;
+  right: 5%;
+  top: 40%;
+  border: solid black 1vb;
+  border-radius: 3vb;
+}
+
+#dealerHand{
+  width: 40vb;
+  position: absolute;
+  left: 35%;
+  top: 35%;
+  z-index: 12;
+}
+
+.take-liver {
+  animation: takeLiver 3s ease-in-out forwards;
+}
+.reverse-hand{
+  animation: giveLiver 3s ease-in-out forwards;
+}
+
+@keyframes takeLiver{
+  0%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(4);
+  }
+}
+
+@keyframes giveLiver{
+  0%{
+    transform: scale(4);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
+
+#giveLiver{
+  width: 40vb;
+  height: 40vb;
+  background-image: url(/liver.png);
+  background-color: transparent;
+  background-size: cover;
+  border:none;
+  position:absolute;
+  left:35%;
+  top: 50%;
+  z-index: 14;
+  font-size: 5vb;
+}
+
+#bet100Button, #bet50Button, #betAllButton{
+  position:absolute;
+  left: 95vb;
+  bottom: 50vb;
+  width: 20vb;
+  height: 20vb;
+  z-index: 1;
+  background-color: transparent;
+  border: none;
+  background-image: url(chips/100chip.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  transition: all .05s;
+  transform: translate(-50%,);
+}
+#bet100Button:active, #bet50Button:active, #betAllButton:active{
+  width: 22vb;
+  height: 22vb;
+}
+#bet50Button{
+  left:70vb;
+  bottom: 50vb;
+  background-image: url(chips/50chip.png);
+}
+#betAllButton{
+  left:120vb;
+  bottom: 50vb;
+  background-image: url(chips/allInChip.png);
+  background-size: 105%;
+  overflow: visible;
+}
+
+#betText, #budgetText{
+  position: absolute;
+  font-size: 10vb;
+  top: 0;
+  margin: 0px;
+  left: 70vb;
+}
+#betText{
+  top: 15vb;
+}
+
+#placeBetButton, #clearBetButton{
+  z-index: 11;
+  width:15%;
+  height: 10%;
+  position: fixed;
+  bottom: 5%;
+  left: 80vb;
+  transform: translateX(-50%);
+  border-radius: 20vb;
+  border: solid black .5vb;
+  box-shadow: 1vb 1vb 1vb  rgb(13, 67, 41);
+  background-color: rgb(63, 170, 28);
+  font-size: 4vb;
+} 
+#clearBetButton{
+  left: 115vb;
+}

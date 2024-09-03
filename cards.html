@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <input type="file" id="folderInput" webkitdirectory directory multiple>
+    <button onclick="processFolder()">Process Folder</button>
+
+    <script>
+      function processFolder() {
+        var folderInput = document.getElementById("folderInput");
+        var files = folderInput.files;
+        var fileNames = [];
+
+        for (var i = 0; i < files.length; i++) {
+          fileNames.push(files[i].name);
+        }
+
+        console.log(fileNames); // Display the file names in the browser console
+      }
+    </script>
+  </body>
+</html>

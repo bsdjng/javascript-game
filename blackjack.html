@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackJack</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    
+    <img id="dealerFace">
+    <button id="giveLiver" hidden="true" onclick="giveLiver()">Give Liver</button>
+    <img id="dealerHand" src="dealerfaces/dealerHand.png" hidden = true draggable="false">
+    <img id="dealerText" hidden="true">
+    <p id="scoreCounter">Score: 0</p>
+    <p id="dealerScore">Dealer Score: 0</p>
+    <div id="dealerCards"></div>
+    <div id="cardContainer"></div>
+    <button onclick="pickRandomCard()" id="hitButton">Hit</button>
+    <button onclick="handleDealerTurn()" id="standButton">Stand</button>
+    <p id="winnerText"></p>
+    <p id="betText">Bet: 0</p>
+    <p id="budgetText"></p>
+    <button id="placeBetButton" onclick="startGame()">Place Bet</button>
+    <button id="clearBetButton" onclick="clearBet()">Clear Bet</button>
+    <button id="refreshButton" onclick="playAgain()" style="display: none;">Play Again</button>
+    <div id="betButtons">
+        <button id="bet50Button" onclick="placeBet(50)"></button>
+        <button id="bet100Button" onclick="placeBet(100)"></button>
+        <button id="betAllButton" onclick="placeBet(budget)"></button>
+    </div>
+    <script src="blackjack.js"></script>
+</body>
+</html>
